@@ -68,6 +68,8 @@ regression和classification的区别是，我们要机器输出的东西的类�
 
 在Semi-supervised Learning的技术里面，这些没有labeled的data，对机器学习也是有帮助的
 
+<img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/semi-supervised-Learning.png?raw=true" alt="semi-supervised" style="zoom:50%;" />
+
 #### Transfer Learning(迁移学习)
 
 假设一样我们要做猫和狗的分类问题
@@ -75,6 +77,8 @@ regression和classification的区别是，我们要机器输出的东西的类�
 我们也一样只有少量的有labeled的data；但是我们现在有大量的不相干的data(不是猫和狗的图片，而是一些其他不相干的图片)，在这些大量的data里面，它可能有label也可能没有label
 
 Transfer Learning要解决的问题是，这一堆不相干的data可以对结果带来什么样的帮助
+
+<img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/transfer-Learning.png?raw=true" alt="transfer" style="zoom:50%;" />
 
 #### Unsupervised Learning(无监督学习)
 
@@ -85,6 +89,8 @@ Transfer Learning要解决的问题是，这一堆不相干的data可以对结�
 学会每个词汇的意思可以理解为：我们要找一个function，然后把一个词汇丢进去，机器要输出告诉你说这个词汇是什么意思，也许他用一个向量来表示这个词汇的不同的特性，不同的attribute
 
 又比如，我们带机器去逛动物园，给他看大量的动物的图片，对于unsupervised learning来说，我们的data中只有给function的输入的大量图片，没有任何的输出标注；在这种情况下，机器该怎么学会根据testing data的输入来自己生成新的图片？
+
+<img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/unsupervised-Learning.png?raw=true" alt="unsupervised" style="zoom:50%;" />
 
 #### Structured Learning(结构化学习)
 
@@ -98,6 +104,8 @@ Transfer Learning要解决的问题是，这一堆不相干的data可以对结�
 
 比如**GAN**也是structured Learning的一种方法
 
+<img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/structured-Learning.png?raw=true" alt="structured" style="zoom:50%;" />
+
 #### Reinforcement Learning(强化学习)
 
 **Supervised Learning**：我们会告诉机器正确的答案是什么 ，其特点是**Learning from teacher**
@@ -107,6 +115,8 @@ Transfer Learning要解决的问题是，这一堆不相干的data可以对结�
 **Reinforcement Learning**：我们没有告诉机器正确的答案是什么，机器最终得到的只有一个分数，就是它做的好还是不好，但他不知道自己到底哪里做的不好，他也没有正确的答案；很像真实社会中的学习，你没有一个正确的答案，你只知道自己是做得好还是不好。其特点是**Learning from critics**
 
 * 比如训练一个聊天机器人，让它跟客人直接对话；如果客人勃然大怒把电话挂掉了，那机器就学到一件事情，刚才做错了，它不知道自己哪里做错了，必须自己回去反省检讨到底要如何改进，比如一开始不应该打招呼吗？还是中间不能骂脏话之类的
+
+<img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/reinforcement-Learning.png?raw=true" alt="reinforcement" style="zoom: 50%;" />
 
 再拿下棋这件事举例，supervised Learning是说看到眼前这个棋盘，告诉机器下一步要走什么位置；而reinforcement Learning是说让机器和对手互弈，下了好几手之后赢了，机器就知道这一局棋下的不错，但是到底哪一步是赢的关键，机器是不知道的，他只知道自己是赢了还是输了
 
