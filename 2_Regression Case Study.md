@@ -120,11 +120,11 @@ $$ L(f)=L(w,b)=\sum_{n=1}^{10}(\widehat{y}^n-(b+w \cdot {x}^n_{cp}))^2$$
 
 挑选最好的function这一件事情，写成formulation/equation的样子如下：
 
-$$f^*=\arg \underset{f}\min L(f)$$，或者是
+$$f^*={arg} \underset{f}{min} L(f)$$，或者是
 
-$$w^*,b^*=\arg \underset{w,b}\min L(w,b)=\arg \underset{w,b}\min \sum\limits^{10}_{n=1}(\widehat{y}^n-(b+w \cdot x^n_{cp}))^2$$
+$$w^*,b^*={arg}\ \underset{w,b}{min} L(w,b)={arg}\  \underset{w,b}{min} \sum\limits^{10}_{n=1}(\widehat{y}^n-(b+w \cdot x^n_{cp}))^2$$
 
-也就是那个使$L(f)=L(w,b)=Loss$最小的$f$或$(w,b)$，就是我们要找的$f^*$或$ (w^*,b^*)$(有点像极大似然估计的思想)
+也就是那个使$L(f)=L(w,b)=Loss$最小的$f$或$(w,b)$，就是我们要找的$f^*$或$(w^*,b^*)$(有点像极大似然估计的思想)
 
 <img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/best-function.png?raw=true" alt="best-function" style="zoom:40%;" />
 
@@ -138,11 +138,11 @@ $$w^*,b^*=\arg \underset{w,b}\min L(w,b)=\arg \underset{w,b}\min \sum\limits^{10
 
 以只带单个参数w的Loss Function `L(w)`为例，首先保证$L(w)$是**可微**的
 
-$$w^*=\arg \underset{w}\min L(w)$$   我们的目标就是找到这个使Loss最小的$w^*$，实际上就是寻找切线L斜率为0的global minima最小值点(注意，存在一些local minima极小值点，其斜率也是0)
+$$w^*={arg}\ \underset{w}{min} L(w)$$   我们的目标就是找到这个使Loss最小的$w^*$，实际上就是寻找切线L斜率为0的global minima最小值点(注意，存在一些local minima极小值点，其斜率也是0)
 
-有一个暴力的方法是，穷举所有的w值，去找到使loss最小的$ w^*$，但是这样做是没有效率的；而gradient descent就是用来解决这个效率问题的
+有一个暴力的方法是，穷举所有的w值，去找到使loss最小的$w^*$，但是这样做是没有效率的；而gradient descent就是用来解决这个效率问题的
 
-* 首先随机选取一个初始的点$w^0$ (当然也不一定要随机选取，如果有办法可以得到比较接近$w^*$的表现得比较好的$ w^0$当初始点，可以有效地提高查找$w^*$的效率)
+* 首先随机选取一个初始的点$w^0$ (当然也不一定要随机选取，如果有办法可以得到比较接近$w^*$的表现得比较好的$w^0$当初始点，可以有效地提高查找$w^*$的效率)
 
 * 计算$L$在$w=w^0$的位置的微分，即$\frac{dL}{dw}|_{w=w^0}$，几何意义就是切线的斜率
 
@@ -173,7 +173,7 @@ $$w^*=\arg \underset{w}\min L(w)$$   我们的目标就是找到这个使Loss最
 
 ##### 两个参数的问题
 
-今天要解决的关于宝可梦的问题，是含有two parameters的问题，即$(w^*,b^*)=\arg \underset{w,b} \min L(w,b)$
+今天要解决的关于宝可梦的问题，是含有two parameters的问题，即$(w^*,b^*)=arg\ \underset{w,b} {min} L(w,b)$
 
 当然，它本质上处理单个参数的问题是一样的
 
@@ -290,7 +290,7 @@ $$
 if \ \ x_s=Pidgey: \ \ \ \ \ \ \ y=b_1+w_1\cdot x_{cp} \\
 if \ \ x_s=Weedle: \ \ \ \ \ \ y=b_2+w_2\cdot x_{cp} \\
 if \ \ x_s=Caterpie: \ \ \ \ y=b_3+w_3\cdot x_{cp} \\
-if \ \ x_s=Eevee: \ \ \ \ \ \ \ \ \ y=b_4+w_4\cdot x_{cp} \\
+if \ \ x_s=Eevee: \ \ \ \ \ \ \ \ \ y=b_4+w_4\cdot x_{cp} 
 $$
 也就是根据不同的物种，设计不同的linear model(这里$x_s=species \ of \ x$)，那如何将上面的四个if语句合并成一个linear model呢？
 
@@ -424,18 +424,18 @@ $$
 ##### 本章节总结：
 
 * Pokémon: Original CP and species almost decide the CP after evolution 
-    
+  
 * There are probably other hidden factors
-    
+  
 * Gradient descent
-    
+  
     * More theory and tips in the following lectures 
 * Overfitting and Regularization
 
 * We finally get average error = 11.1 on the testing data
-    
+  
 * How about new data? Larger error? Lower error?(larger->need validation)
-    
+  
 * Next lecture: Where does the error come from?
     * More theory about overfitting and regularization
     * The concept of validation(用来解决new data的error高于11.1的问题)
