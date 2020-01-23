@@ -7,7 +7,7 @@ notes about machine learning
 
 [2_Regression Case Study]( https://sakura-gh.github.io/ML-notes/ML-notes-html/2_Regression-Case-Study.html)
 
-[3_Regression demo(Adagrad)]( https://sakura-gh.github.io/ML-notes/ML-notes-html/3_Regression demo(Adagrad).html)
+[3_Regression demo(Adagrad)]( https://sakura-gh.github.io/ML-notes/ML-notes-html/3_Regression-demo(Adagrad).html)
 
 ##### csdn博客链接：
 
