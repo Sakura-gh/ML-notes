@@ -9,4 +9,4 @@ notes about machine learning
 
 ##### 代码链接：
 
-[Gradient Descent Demo](/code/Gradient Descent Demo/Gradient Descent Demo.html)
+[Gradient Descent Demo](./code/Gradient Descent Demo/Gradient Descent Demo.html)
