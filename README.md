@@ -9,4 +9,4 @@ notes about machine learning
 
 ##### 代码链接：
 
-[Gradient Descent Demo](http://htmlpreview.github.io/?https://github.com/Sakura-gh/ML-notes/blob/master/code/Gradient-Descent-Demo/Gradient-Descent-Demo.html))
+[Gradient Descent Demo]( https://sakura-gh.github.io/ML-notes/code/Gradient-Descent-Demo/Gradient-Descent-Demo.html)
