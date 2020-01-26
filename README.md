@@ -9,6 +9,8 @@ notes about machine learning
 
 [3_Regression demo(Adagrad)]( https://sakura-gh.github.io/ML-notes/ML-notes-html/3_Regression-demo(Adagrad).html)
 
+[4_Where does the error come from](https://sakura-gh.github.io/ML-notes/ML-notes-html/4_Where-does-the-error-come-from.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -17,6 +19,12 @@ notes about machine learning
 
 [梯度下降代码举例：Gradient Descent Demo(Adagrad)](https://blog.csdn.net/weixin_44406200/article/details/104075986)
 
+[机器学习系列4-模型的误差来源及减少误差的方法](https://blog.csdn.net/weixin_44406200/article/details/104088554)
+
 ##### 代码链接：
 
 [Gradient Descent Demo(Adagrad)]( https://sakura-gh.github.io/ML-notes/code/Gradient-Descent-Demo/Gradient-Descent-Demo.html)
+
+##### 温馨提示：
+
+图片加载可能会有些许缓慢，请耐心等待\\(\^o\^)/
