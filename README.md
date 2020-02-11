@@ -1,5 +1,12 @@
 # ML-notes
+
 notes about machine learning
+
+##### pages
+
+the github page is: https://Sakura-gh.github.io/ML-notes
+
+you can also visit gitee page for quicker Internet in China: https://Sakura-gh.gitee.io/ml-notes
 
 ##### html链接：
 
@@ -13,6 +20,8 @@ notes about machine learning
 
 [5_Gradient Descent](https://sakura-gh.github.io/ML-notes/ML-notes-html/5_Gradient-Descent.html)
 
+[6_Classification](https://Sakura-gh.github.io/ML-notes/ML-notes-html/6_Classification.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -24,6 +33,8 @@ notes about machine learning
 [机器学习系列4-模型的误差来源及减少误差的方法](https://blog.csdn.net/weixin_44406200/article/details/104088554)
 
 [机器学习系列5-梯度下降法](https://blog.csdn.net/weixin_44406200/article/details/104256006)
+
+[机器学习系列6-分类问题(概率生成模型)](https://blog.csdn.net/weixin_44406200/article/details/104272160)
 
 ##### 代码链接：
 
