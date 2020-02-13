@@ -20,9 +20,11 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [5_Gradient Descent](https://sakura-gh.github.io/ML-notes/ML-notes-html/5_Gradient-Descent.html)
 
-[6_Classification](https://Sakura-gh.github.io/ML-notes/ML-notes-html/6_Classification.html)
+[6_Classification](https://sakura-gh.github.io/ML-notes/ML-notes-html/6_Classification.html)
 
-[7_Logistic Regression](https://Sakura-gh.github.io/ML-notes/ML-notes-html/7_Logistic-Regression.html)
+[7_Logistic Regression](https://sakura-gh.github.io/ML-notes/ML-notes-html/7_Logistic-Regression.html)
+
+[8_Deep Learning](https://sakura-gh.github.io/ML-notes/ML-notes-html/8_Deep-Learning.html)
 
 ##### csdn博客链接：
 
@@ -39,6 +41,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 [机器学习系列6-分类问题(概率生成模型)](https://blog.csdn.net/weixin_44406200/article/details/104272160)
 
 [机器学习系列7-逻辑回归](https://blog.csdn.net/weixin_44406200/article/details/104288916)
+
+[机器学习系列8-深度学习简介](https://blog.csdn.net/weixin_44406200/article/details/104299958)
 
 ##### 代码链接：
 
