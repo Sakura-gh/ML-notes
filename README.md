@@ -26,6 +26,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [8_Deep Learning](https://sakura-gh.github.io/ML-notes/ML-notes-html/8_Deep-Learning.html)
 
+[9_Backpropagation](https://sakura-gh.github.io/ML-notes/ML-notes-html/9_Backpropagation.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -44,6 +46,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [机器学习系列8-深度学习简介](https://blog.csdn.net/weixin_44406200/article/details/104299958)
 
+[机器学习系列9-反向传播](https://blog.csdn.net/weixin_44406200/article/details/104310991)
+
 ##### 代码链接：
 
 [Gradient Descent Demo(Adagrad)]( https://sakura-gh.github.io/ML-notes/code/Gradient-Descent-Demo/Gradient-Descent-Demo.html)
@@ -51,3 +55,7 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 ##### 温馨提示：
 
 图片加载可能会有些许缓慢，请耐心等待\\(\^o\^)/
+
+##### LICENSE:
+
+Apache License 2.0
