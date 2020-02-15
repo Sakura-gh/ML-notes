@@ -1,0 +1,582 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>10_Keras</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-node'><h1><a name="keras20" class="md-header-anchor"></a><span>Keras2.0</span></h1><h4><a name="why-keras" class="md-header-anchor"></a><span>Why Keras</span></h4><p><span>你可能会问，为什么不学TensorFlow呢？明明tensorflow才是目前最流行的machine learning库之一啊。其实，它并没有那么好用，tensorflow和另外一个功能相近的toolkit theano，它们是非常flexible的，你甚至可以把它想成是一个微分器，它完全可以做deep learning以外的事情，因为它的作用就是帮你算微分，拿到微分之后呢，你就可以去算gradient descent之类，而这么flexible的toolkit学起来是有一定的难度的，你没有办法在半个小时之内精通这个toolkit</span></p><p><span>但是另一个toolkit——Keras，你是可以在数十分钟内就熟悉并精通它的，然后用它来implement一个自己的deep learning，Keras其实是tensorflow和theano的interface，所以用Keras就等于在用tensorflow，只是有人帮你把操纵tensorflow这件事情先帮你写好</span></p><p><span>所以Keras是比较容易去学习和使用的，并且它也有足够的弹性，除非你自己想要做deep learning的研究，去设计一个自己的network，否则多数你可以想到的network，在Keras里都有现成的function可以拿来使用；因为它背后就是tensorflow or theano，所以如果你想要精进自己的能力的话，你永远可以去改Keras背后的tensorflow的code，然后做更厉害的事情</span></p><p><span>而且，现在Keras已经成为了Tensorflow官方的API，它像搭积木一样简单</span></p><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/keras.png" width="50%;"></center><p><span>接下来我们用手写数字识别的demo来介绍一下&quot;Hello world&quot; of deep learning</span></p><h4><a name="prepare-data" class="md-header-anchor"></a><span>prepare data</span></h4><p><span>使用的data是MNIST的Data：</span><a href='http://yann.lecun.com/exdb/mnist/' target='_blank' class='url'>http://yann.lecun.com/exdb/mnist/</a></p><p><span>Keras提供了自动下载MNIST data的function：</span><a href='http://keras.io/datasets/' target='_blank' class='url'>http://keras.io/datasets/</a></p><h4><a name="process" class="md-header-anchor"></a><span>process</span></h4><p><span>首先要先导入keras包：</span><code>from keras.models import Sequential</code></p><h5><a name="step-1define-a-set-of-function------neural-network" class="md-header-anchor"></a><span>step 1：define a set of function——neural network</span></h5><p><span>先用</span><code>Sequential()</code><span>宣告建立一个model</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">model</span> = <span class="cm-variable">Sequential</span>()</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><p><span>然后开始叠一个neural network：它有两个hidden layer，每个hidden layer都有500个neuron</span></p><ul><li><p><span>加一个</span><strong><span>Fully connected</span></strong><span>的layer——用</span><strong><span>Dense</span></strong><span>来表示，当然你也可以加别的layer，比如convolution的layer</span></p><p><span>之前我们说过，input layer比较特殊，它并不是真正意义上的layer，因为它没有所谓的&quot;neuron&quot;，于是Keras在model里面加的第一层layer会有一些特殊，要求同时输入</span><code>input_dim</code><span>和</span><code>units</code><span>，分别代表第一层hidden layer输入维数(也就是input layer的dimension)和第一层hidden layer的neuron个数</span></p><p><code>input_dim=28*28</code><span>表示一个28*28=784长度的vector，代表image；</span><code>units=500</code><span>表示该层hidden layer要有500个neuron；</span><code>activation=‘sigmoid’</code><span>表示激活函数使用sigmoid function</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">model</span>.<span class="cm-property">add</span>(<span class="cm-variable">Dense</span>(<span class="cm-variable">input_dim</span>=<span class="cm-number">28</span> <span class="cm-operator">*</span> <span class="cm-number">28</span>, <span class="cm-variable">units</span>=<span class="cm-number">500</span>, <span class="cm-variable">activation</span>=<span class="cm-string">'sigmoid'</span>))</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><p><span>加完layer之后，还需要设定该层hidden layer所使用的activation function，这里直接就用sigmoid function</span></p><p><span>在Keras里还可以选别的activation function，比如softplus、softsign、relu、tanh、hard_sigmoid、linear等等，如果你要加上自己的activation function，其实也蛮容易的，只要在Keras里面找到写activation function的地方，自己再加一个进去就好了</span></p></li><li><p><span>从第二层hidden layer开始，如果要在model里再加一个layer，就用model.add增加一个Dense全连接层，包括</span><code>units</code><span>和</span><code>activation</code><span>参数</span></p><p><span>这边就不需要再redefine </span><code>input_dim</code><span>是多少了，因为新增layer的input就等于前一个layer的output，Keras自己是知道这件事情的，所以你就直接告诉它说，新加的layer有500个neuron就好了</span></p><p><span>这里同样把activation function设置为sigmoid function</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">model</span>.<span class="cm-property">add</span>(<span class="cm-variable">Dense</span>(<span class="cm-variable">units</span>=<span class="cm-number">500</span>, <span class="cm-variable">activation</span>=<span class="cm-string">'sigmoid'</span>))</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre></li><li><p><span>最后，由于是分10个数字，所以output是10维，如果把output layer当做一个Multi-class classifier的话，那activation function就用softmax(这样可以让output每一维的几率之和为1，表现得更像一个概率分布)，当然你也可以选择别的</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">model</span>.<span class="cm-property">add</span>(<span class="cm-variable">Dense</span>(<span class="cm-variable">units</span>=<span class="cm-number">10</span>, <span class="cm-variable">activation</span>=<span class="cm-string">'softmax'</span>))</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre></li></ul><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/keras-step1.png" width="60%;"></center><p><span>注：上图中写的是Keras1.0的语法，在笔记中给出的则是Keras2.0的语法，应当使用后者</span></p><h5><a name="step-2goodness-of-function------cross-entropy" class="md-header-anchor"></a><span>Step 2：goodness of function——cross entropy</span></h5><p><span>evaluate一个function的好坏，你要做的事情是用model.compile去定义你的loss function是什么</span></p><p><span>比如说你要用</span><strong><span>cross entropy</span></strong><span>的话，那你的loss参数就是</span><strong><span>categorical_crossentropy</span></strong><span>(Keras里的写法)</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">model</span>.<span class="cm-property">compile</span>(<span class="cm-variable">loss</span>=<span class="cm-string">'categorical_crossentropy'</span>,</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">optimizer</span>=<span class="cm-string">'adam'</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">metrics</span>=[<span class="cm-string">'accuracy'</span>])</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 69px;"></div><div class="CodeMirror-gutters" style="display: none; height: 69px;"></div></div></div></pre><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/keras-step2.png" width="60%;"></center><h5><a name="step-3pick-the-best-function" class="md-header-anchor"></a><span>Step 3：pick the best function</span></h5><h6><a name="configuration" class="md-header-anchor"></a><span>Configuration</span></h6><p><span>在training之前，你要先下一些</span><strong><span>configuration</span></strong><span>告诉它training的时候，你打算要怎么做</span></p><p><span>你要定义的第一个东西是optimizer，也就是说，你要用什么样的方式来找最好的function，虽然optimizer后面可以接不同的方式，但是这些不同的方式，其实都是gradient descent类似的方法</span></p><p><span>有一些方法machine会自动地，empirically(根据经验地)决定learning rate的值应该是多少，所以这些方法是不需要给它learning rate的，Keras里面有诸如：SGD(gradient descent)、RMSprop、Adagrad、Adadelta、Adam、Adamax、Nadam之类的寻找最优参数的方法，它们都是gradient descent的方式</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">model</span>.<span class="cm-property">compile</span>(<span class="cm-variable">loss</span>=<span class="cm-string">'categorical crossentropy'</span>,</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">optimizer</span>=<span class="cm-string">'adam'</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">metrics</span>=[<span class="cm-string">'accuracy'</span>])</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 69px;"></div><div class="CodeMirror-gutters" style="display: none; height: 69px;"></div></div></div></pre><h6><a name="training" class="md-header-anchor"></a><span>Training</span></h6><p><span>决定好怎么做gradient descent之后，就是实际去做训练了，去跑gradient descent找最优参数了</span></p><p><span>这里使用的是</span><code>model.fit</code><span>方法，要给它4给input(假设我们给了10000张image作Training data)</span></p><ul><li><p><span>第一个input是Training data——</span><code>x_train</code></p><p><span>在这个case里，Training data就是一张一张的image，需要把它存放到numpy array里面，这个numpy array是two-dimension的matrix，每张image存为numpy array的一个行向量(它把image中28</span><span>*</span><span>28个像素值拉成一个行向量)，总共有10000行，它的列数就是每张image的像素点个数，即28</span><span>*</span><span>28=784列</span></p></li><li><p><span>第二个input是每一个Training data对应的label——</span><code>y_train</code></p><p><span>在这个case里，就是标志着这张image对应的是0~9的那一个数字，同样也是two-dimension的numpy array，每张image的label存为numpy array的一个行向量，用来表示0~9这10个数字中的某一个数，所以是10列，用的是one-hot编码，10个数字中对了对应image的那个数字为1之外其余都是0</span></p></li><li><p><span>第三个input是</span><code>batch_size</code><span>，告诉Keras我们的batch要有多大</span></p><p><span>在这个case里，batch_size=100，表示我们要把100张随机选择的image放到一个batch里面，然后把所有的image分成一个个不同的batch，Keras会自动帮你完成随机选择image的过程，不需要自己去code</span></p></li><li><p><span>第四个input是</span><code>nb_epoch</code><span>，表示对所有batch的训练要做多少次</span></p><p><span>在这个case里，nb_epoch=20，表示要对所有的batch进行20遍gradient descent的训练，每看到一个batch就update一次参赛，假设现在每一个epoch里面有100个batch，就对应着update 100次参数，20个epoch就是update 2000次参数</span></p></li></ul><p><span>注：如果batch_size设为1，就是</span><strong><span>Stochastic Gradient Descent</span></strong><span>(随机梯度下降法)，这个我们之前在讨论gradient descent的时候有提到，就是每次拿到一个样本点就update一次参数，而不是每次拿到一批样本点的error之后才去update参数，因此stochastic gradient descent的好处是它的速度比较快，虽然每次update参数的方向是不稳定的，但是</span><strong><span>天下武功，唯快不破</span></strong><span>，在别人出一拳的时候，它就已经出了100拳了，所以它是比较强的</span></p><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/keras-step3.png" width="60%;"></center><h4><a name="mini-batch" class="md-header-anchor"></a><span>Mini-batch</span></h4><p><span>这里有一个秘密，就是我们在做deep learning的gradient descent的时候，并不会真的去minimize total loss，那我们做的是什么呢？我们会把Training data分成一个一个的batch，比如说你的Training data一共有1w张image，每次random选100张image作为一个batch(我的理解是，先将原来的image分布随机打乱，然后再按顺序每次挑出batch_size张image组成一个batch，这样才能保证所有的data都有被用到，且不同的batch里不会出现重复的data)</span></p><ul><li><p><span>像gradient descent一样，先随机initialize network的参数</span></p></li><li><p><span>选第一个batch出来，然后计算这个batch里面的所有element的total loss，</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.033ex" height="2.461ex" viewBox="0 -906.7 7333.4 1059.4" role="img" focusable="false" style="vertical-align: -0.355ex;"><defs><path stroke-width="0" id="E1-MJMATHI-4C" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="0" id="E1-MJMAIN-2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path><path stroke-width="0" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="0" id="E1-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path stroke-width="0" id="E1-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E1-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E1-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path stroke-width="0" id="E1-MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E1-MJMATHI-4C" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E1-MJMAIN-2032" x="963" y="513"></use><use xlink:href="#E1-MJMAIN-3D" x="1253" y="0"></use><g transform="translate(2309,0)"><use xlink:href="#E1-MJMATHI-6C" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E1-MJMAIN-31" x="421" y="513"></use></g><use xlink:href="#E1-MJMAIN-2B" x="3282" y="0"></use><g transform="translate(4283,0)"><use xlink:href="#E1-MJMATHI-6C" x="0" y="0"></use><g transform="translate(298,362)"><use transform="scale(0.707)" xlink:href="#E1-MJMAIN-33"></use><use transform="scale(0.707)" xlink:href="#E1-MJMAIN-31" x="500" y="0"></use></g></g><use xlink:href="#E1-MJMAIN-2B" x="5388" y="0"></use><use xlink:href="#E1-MJMAIN-2E" x="6166" y="0"></use><use xlink:href="#E1-MJMAIN-2E" x="6610" y="0"></use><use xlink:href="#E1-MJMAIN-2E" x="7055" y="0"></use></g></svg></span><script type="math/tex">L'=l^1+l^{31}+...</script><span>，接下来根据</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.266ex" height="2.227ex" viewBox="0 -856.4 975.5 958.9" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E3-MJMATHI-4C" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="0" id="E3-MJMAIN-2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E3-MJMATHI-4C" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E3-MJMAIN-2032" x="963" y="513"></use></g></svg></span><script type="math/tex">L'</script><span>去update参数，也就是计算</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.266ex" height="2.227ex" viewBox="0 -856.4 975.5 958.9" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E3-MJMATHI-4C" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="0" id="E3-MJMAIN-2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E3-MJMATHI-4C" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E3-MJMAIN-2032" x="963" y="513"></use></g></svg></span><script type="math/tex">L'</script><span>对所有参数的偏微分，然后update参数</span></p><p><span>注意：不是全部data的total loss</span></p></li><li><p><span>再选择第二个batch，现在这个batch的total loss是</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.484ex" height="2.461ex" viewBox="0 -906.7 7527.9 1059.4" role="img" focusable="false" style="vertical-align: -0.355ex;"><defs><path stroke-width="0" id="E5-MJMATHI-4C" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="0" id="E5-MJMAIN-2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path><path stroke-width="0" id="E5-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="0" id="E5-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path stroke-width="0" id="E5-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E5-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E5-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E5-MJMAIN-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path stroke-width="0" id="E5-MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E5-MJMATHI-4C" x="0" y="0"></use><g transform="translate(681,362)"><use transform="scale(0.707)" xlink:href="#E5-MJMAIN-2032"></use><use transform="scale(0.707)" xlink:href="#E5-MJMAIN-2032" x="275" y="0"></use></g><use xlink:href="#E5-MJMAIN-3D" x="1447" y="0"></use><g transform="translate(2503,0)"><use xlink:href="#E5-MJMATHI-6C" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E5-MJMAIN-32" x="421" y="513"></use></g><use xlink:href="#E5-MJMAIN-2B" x="3477" y="0"></use><g transform="translate(4477,0)"><use xlink:href="#E5-MJMATHI-6C" x="0" y="0"></use><g transform="translate(298,362)"><use transform="scale(0.707)" xlink:href="#E5-MJMAIN-31"></use><use transform="scale(0.707)" xlink:href="#E5-MJMAIN-36" x="500" y="0"></use></g></g><use xlink:href="#E5-MJMAIN-2B" x="5582" y="0"></use><use xlink:href="#E5-MJMAIN-2E" x="6360" y="0"></use><use xlink:href="#E5-MJMAIN-2E" x="6805" y="0"></use><use xlink:href="#E5-MJMAIN-2E" x="7249" y="0"></use></g></svg></span><script type="math/tex">L''=l^2+l^{16}+...</script><span>，接下来计算</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.717ex" height="2.227ex" viewBox="0 -856.4 1169.9 958.9" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E6-MJMATHI-4C" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="0" id="E6-MJMAIN-2032" d="M79 43Q73 43 52 49T30 61Q30 68 85 293T146 528Q161 560 198 560Q218 560 240 545T262 501Q262 496 260 486Q259 479 173 263T84 45T79 43Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E6-MJMATHI-4C" x="0" y="0"></use><g transform="translate(681,362)"><use transform="scale(0.707)" xlink:href="#E6-MJMAIN-2032"></use><use transform="scale(0.707)" xlink:href="#E6-MJMAIN-2032" x="275" y="0"></use></g></g></svg></span><script type="math/tex">L''</script><span>对所有参数的偏微分，然后update参数</span></p></li><li><p><span>反复做这个process，直到把所有的batch通通选过一次，所以假设你有100个batch的话，你就把这个参数update 100次，把所有batch看过一次，就叫做一个epoch</span></p></li><li><p><span>重复epoch的过程，所以你在train network的时候，你会需要好几十个epoch，而不是只有一个epoch</span></p></li></ul><p><span>整个训练的过程类似于stochastic gradient descent，不是将所有数据读完才开始做gradient descent的，而是拿到一部分数据就做一次gradient descent</span></p><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/mini-batch.png" width="50%;"></center><h4><a name="batch-size-and-training-speed" class="md-header-anchor"></a><span>Batch size and Training Speed</span></h4><h5><a name="batch-size太小会导致不稳定速度上也没有优势" class="md-header-anchor"></a><span>batch size太小会导致不稳定，速度上也没有优势</span></h5><p><span>前面已经提到了，stochastic gradient descent速度快，表现好，既然如此，为什么我们还要用Mini-batch呢？这就涉及到了一些实际操作上的问题，让我们必须去用Mini-batch</span></p><p><span>举例来说，我们现在有50000个examples，如果我们把batch size设置为1，就是stochastic gradient descent，那在一个epoch里面，就会update 50000次参数；如果我们把batch size设置为10，在一个epoch里面，就会update 5000次参数</span></p><p><span>看上去stochastic gradient descent的速度貌似是比较快的，它一个epoch更新参数的次数比batch size等于10的情况下要快了10倍，但是！我们好像忽略了一个问题，我们之前一直都是下意识地认为不同batch size的情况下运行一个epoch的时间应该是相等的，然后我们才去比较每个epoch所能够update参数的次数，可是它们又怎么可能会是相等的呢？</span></p><p><span>实际上，当你batch size设置不一样的时候，一个epoch需要的时间是不一样的，以GTX 980为例，下图是对总数为50000笔的Training data设置不同的batch size时，每一个epoch所需要花费的时间</span></p><ul><li><span>case1：如果batch size设为1，也就是stochastic gradient descent，一个epoch要花费166秒，接近3分钟</span></li><li><span>case2：如果batch size设为10，那一个epoch是17秒</span></li></ul><p><span>也就是说，当stochastic gradient descent算了一个epoch的时候，batch size为10的情况已经算了近10个epoch了；所以case1跑一个epoch，做了50000次update参数的同时，case2跑了十个epoch，做了近5000</span><span>*</span><span>10=50000次update参数；你会发现batch size设1和设10，update参数的次数几乎是一样的</span></p><p><span>如果不同batch size的情况，update参数的次数几乎是一样的，你其实会想要选batch size更大的情况，就像在本例中，相较于batch size=1，你会更倾向于选batch size=10，因为batch size=10的时候，是会比较稳定的，因为</span><strong><span>由更大的数据集计算的梯度能够更好的代表样本总体，从而更准确的朝向极值所在的方向</span></strong></p><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/batch-size-speed.png" width="50%;"></center><p><span>我们之前把gradient descent换成stochastic gradient descent，是因为后者速度比较快，update次数比较多，可是现在如果你用stochastic gradient descent并没有见得有多快，那你为什么不选一个update次数差不多，又比较稳定的方法呢？</span></p><h5><a name="batch-size会受到gpu平行加速的限制太大可能导致在train的时候卡住" class="md-header-anchor"></a><span>batch size会受到GPU平行加速的限制，太大可能导致在train的时候卡住</span></h5><p><span>上面例子的现象产生的原因是我们用了GPU，用了平行运算，所以batch size=10的时候，这10个example其实是同时运算的，所以你在一个batch里算10个example的时间跟算1个example的时间几乎可以是一样的</span></p><p><span>那你可能会问，既然batch size越大，它会越稳定，而且还可以平行运算，那为什么不把batch size变得超级大呢？这里有两个claim(声明)：</span></p><ul><li><p><span>第一个claim就是，如果你把batch size开到很大，最终GPU会没有办法进行平行运算，它终究是有自己的极限的，也就是说它同时考虑10个example和1个example的时间是一样的，但当它考虑10000个example的时候，时间就不可能还是跟一个example一样，因为batch size考虑到</span><strong><span>硬件限制</span></strong><span>，是没有办法无穷尽地增长的</span></p></li><li><p><span>第二个claim是说，如果把batch size设的很大，在train gradient descent的时候，可能跑两下你的network就卡住了，就陷到saddle point或者local minima里面去了</span></p><p><span>因为在neural network的error surface上面，如果你把loss的图像可视化出来的话，它并不是一个convex的optimization problem，不会像理想中那么平滑，实际上它会有很多的坑坑洞洞</span></p><p><span>如果你用的batch size很大，甚至是Full batch，那你走过的路径会是比较平滑连续的，可能这一条平滑的曲线在走向最低点的过程中就会在坑洞或是缓坡上卡住了；但是，如果你的batch size没有那么大，意味着你走的路线没有那么的平滑，有些步伐走的是</span><strong><span>随机性</span></strong><span>的，路径是会有一些曲折和波动的</span></p><p><span>可能在你走的过程中，它的曲折和波动刚好使得你“绕过”了那些saddle point或是local minima的地方；或者当你陷入不是很深的local minima或者没有遇到特别麻烦的saddle point的时候，它步伐的随机性就可以帮你跳出这个gradient接近于0的区域，于是你更有可能真的走向global minima的地方</span></p><p><span>而对于Full batch的情况，它的路径是没有随机性的，是稳定朝着目标下降的，因此在这个时候去train neural network其实是有问题的，可能update两三次参数就会卡住，所以mini batch是有必要的</span></p><p><span>下面是我手画的图例和注释：</span></p><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/batch-size.jpg" width="70%;"></center></li></ul><h5><a name="不同batch-size在梯度下降上的表现" class="md-header-anchor"></a><span>不同batch size在梯度下降上的表现</span></h5><p><span>如下图，左边是full batch(拿全部的Training data做一个batch)的梯度下降效果，可以看到每一次迭代成本函数都呈现下降趋势，这是好的现象，说明我们w和b的设定一直再减少误差， 这样一直迭代下去我们就可以找到最优解；右边是mini batch的梯度下降效果，可以看到它是上下波动的，成本函数的值有时高有时低，但总体还是呈现下降的趋势， 这个也是正常的，因为我们每一次梯度下降都是在min batch上跑的而不是在整个数据集上， 数据的差异可能会导致这样的波动(可能某段数据效果特别好，某段数据效果不好)，但没关系，因为它整体是呈下降趋势的</span></p><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/keras-gd1.png" width="50%;"></center><p><span>把下面的图看做是梯度下降空间：蓝色部分是full batch而紫色部分是mini batch，就像上面所说的mini batch不是每次迭代损失函数都会减少，所以看上去好像走了很多弯路，不过整体还是朝着最优解迭代的，而且由于mini batch一个epoch就走了5000步(5000次梯度下降)，而full batch一个epoch只有一步，所以虽然mini batch走了弯路但还是会快很多</span></p><p><span>而且，就像之前提到的那样，mini batch在update的过程中，步伐具有随机性，因此紫色的路径可以在一定程度上绕过或跳出saddle point、local minima这些gradient趋近于0的地方；而蓝色的路径因为缺乏随机性，只能按照既定的方式朝着目标前进，很有可能就在中途被卡住，永远也跳不出来了</span></p><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/keras-gd2.png" width="40%;"></center><p><span>当然，就像之前讨论的一样，如果batch size太小，会造成速度不仅没有加快反而会导致下降的曲线更加不稳定的情况产生</span></p><p><mark><strong><span>因此batch size既不能太大，因为它会受到硬件GPU平行加速的限制，导致update次数过于缓慢，并且由于缺少随机性而很容易在梯度下降的过程中卡在saddle point或是local minima的地方(极端情况是Full batch)；而且batch size也不能太小，因为它会导致速度优势不明显的情况下，梯度下降曲线过于不稳定，算法可能永远也不会收敛(极端情况是Stochastic gradient descent)</span></strong></mark></p><h5><a name="gpu是如何平行加速的" class="md-header-anchor"></a><span>GPU是如何平行加速的</span></h5><p><span>整个network，不管是Forward pass还是Backward pass，都可以看做是一连串的矩阵运算的结果</span></p><p><span>那今天我们就可以比较batch size等于1(stochastic gradient descent)和10(mini batch)的差别</span></p><p><span>如下图所示，stochastic gradient descent就是对每一个input x进行单独运算；而mini batch，则是把同一个batch里面的input全部集合起来，假设现在我们的batch size是2，那mini batch每一次运算的input就是把黄色的vector和绿色的vector拼接起来变成一个matrix，再把这个matrix乘上</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.716ex" height="1.644ex" viewBox="0 -504.6 1169.6 707.6" role="img" focusable="false" style="vertical-align: -0.472ex;"><defs><path stroke-width="0" id="E7-MJMATHI-77" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path><path stroke-width="0" id="E7-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E7-MJMATHI-77" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E7-MJMAIN-31" x="1012" y="-213"></use></g></svg></span><script type="math/tex">w_1</script><span>，你就可以直接得到</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.143ex" height="2.344ex" viewBox="0 -906.7 922.5 1009.2" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E8-MJMATHI-7A" d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z"></path><path stroke-width="0" id="E8-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E8-MJMATHI-7A" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E8-MJMAIN-31" x="663" y="513"></use></g></svg></span><script type="math/tex">z^1</script><span>和</span><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.143ex" height="2.344ex" viewBox="0 -906.7 922.5 1009.2" role="img" focusable="false" style="vertical-align: -0.238ex;"><defs><path stroke-width="0" id="E9-MJMATHI-7A" d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z"></path><path stroke-width="0" id="E9-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E9-MJMATHI-7A" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E9-MJMAIN-32" x="663" y="513"></use></g></svg></span><script type="math/tex">z^2</script></p><p><span>这两件事在理论上运算量是一样多的，但是在实际操作上，对GPU来说，在矩阵里面相乘的每一个element都是可以平行运算的，所以图中stochastic gradient descent运算的时间反而会变成下面mini batch使用GPU运算速度的两倍，这就是为什么我们要使用mini batch的原因</span></p><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/matrix-speed.png" width="50%;"></center><p><span>所以，如果你买了GPU，但是没有使用mini batch的话，其实就不会有多少加速的效果</span></p><h4><a name="save-and-load-models" class="md-header-anchor"></a><span>Save and Load Models</span></h4><p><span>Keras是可以帮你save和load model的，你可以把train好的model存起来，以后再用另外一个程式读出来，它也可以帮你做testing</span></p><p><span>那怎么用neural network去testing呢？有两种case：</span></p><ul><li><p><span>case 1是</span><strong><span>evaluation</span></strong><span>，比如今天我有一组testing set，testing set的答案也是已知的，那Keras就可以帮你算现在的正确率有多少，这个</span><code>model.evaluate</code><span>函数有两个input，就是testing的image和testing的label</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">score</span> = <span class="cm-variable">model</span>.<span class="cm-property">evaluate</span>(<span class="cm-variable">x_test</span>,<span class="cm-variable">y_test</span>)</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">print</span>(<span class="cm-string">'Total loss on Testing Set:'</span>,<span class="cm-variable">score</span>[<span class="cm-number">0</span>])</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">print</span>(<span class="cm-string">'Accuracy of Testing Set:'</span>,<span class="cm-variable">score</span>[<span class="cm-number">1</span>])</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 69px;"></div><div class="CodeMirror-gutters" style="display: none; height: 69px;"></div></div></div></pre></li><li><p><span>case 2是</span><strong><span>prediction</span></strong><span>，这个时候</span><code>model.predict</code><span>函数的input只有image data而没有任何的label data，output就直接是分类的结果</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">result</span> = <span class="cm-variable">model</span>.<span class="cm-property">predict</span>(<span class="cm-variable">x_test</span>)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre></li></ul><center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/save-load-model.png" width="60%;"></center><h4><a name="appendix手写数字识别完整代码keras20" class="md-header-anchor"></a><span>Appendix：手写数字识别完整代码(Keras2.0)</span></h4><h5><a name="code" class="md-header-anchor"></a><span>code</span></h5><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">numpy</span> <span class="cm-keyword">as</span> <span class="cm-variable">np</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">from</span> <span class="cm-variable">keras</span>.<span class="cm-property">models</span> <span class="cm-keyword">import</span> <span class="cm-variable">Sequential</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">from</span> <span class="cm-variable">keras</span>.<span class="cm-property">layers</span>.<span class="cm-property">core</span> <span class="cm-keyword">import</span> <span class="cm-variable">Dense</span>, <span class="cm-variable">Dropout</span>, <span class="cm-variable">Activation</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">from</span> <span class="cm-variable">keras</span>.<span class="cm-property">layers</span> <span class="cm-keyword">import</span> <span class="cm-variable">Conv2D</span>, <span class="cm-variable">MaxPooling2D</span>, <span class="cm-variable">Flatten</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">from</span> <span class="cm-variable">keras</span>.<span class="cm-property">optimizers</span> <span class="cm-keyword">import</span> <span class="cm-variable">SGD</span>, <span class="cm-variable">Adam</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">from</span> <span class="cm-variable">keras</span>.<span class="cm-property">utils</span> <span class="cm-keyword">import</span> <span class="cm-variable">np_utils</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">from</span> <span class="cm-variable">keras</span>.<span class="cm-property">datasets</span> <span class="cm-keyword">import</span> <span class="cm-variable">mnist</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># categorical_crossentropy</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">load_data</span>(): &nbsp;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  (<span class="cm-variable">x_train</span>, <span class="cm-variable">y_train</span>), (<span class="cm-variable">x_test</span>, <span class="cm-variable">y_test</span>) = <span class="cm-variable">mnist</span>.<span class="cm-property">load_data</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">number</span> = <span class="cm-number">10000</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">x_train</span> = <span class="cm-variable">x_train</span>[<span class="cm-number">0</span>:<span class="cm-variable">number</span>]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">y_train</span> = <span class="cm-variable">y_train</span>[<span class="cm-number">0</span>:<span class="cm-variable">number</span>]</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">x_train</span> = <span class="cm-variable">x_train</span>.<span class="cm-property">reshape</span>(<span class="cm-variable">number</span>, <span class="cm-number">28</span> <span class="cm-operator">*</span> <span class="cm-number">28</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">x_test</span> = <span class="cm-variable">x_test</span>.<span class="cm-property">reshape</span>(<span class="cm-variable">x_test</span>.<span class="cm-property">shape</span>[<span class="cm-number">0</span>], <span class="cm-number">28</span> <span class="cm-operator">*</span> <span class="cm-number">28</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">x_train</span> = <span class="cm-variable">x_train</span>.<span class="cm-property">astype</span>(<span class="cm-string">'float32'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">x_test</span> = <span class="cm-variable">x_test</span>.<span class="cm-property">astype</span>(<span class="cm-string">'float32'</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment"># convert class vectors to binary class matrices</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">y_train</span> = <span class="cm-variable">np_utils</span>.<span class="cm-property">to_categorical</span>(<span class="cm-variable">y_train</span>, <span class="cm-number">10</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">y_test</span> = <span class="cm-variable">np_utils</span>.<span class="cm-property">to_categorical</span>(<span class="cm-variable">y_test</span>, <span class="cm-number">10</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">x_train</span> = <span class="cm-variable">x_train</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">x_test</span> = <span class="cm-variable">x_test</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment"># x_test=np.random.normal(x_test)</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">x_train</span> = <span class="cm-variable">x_train</span> <span class="cm-operator">/</span> <span class="cm-number">255</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">x_test</span> = <span class="cm-variable">x_test</span> <span class="cm-operator">/</span> <span class="cm-number">255</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> (<span class="cm-variable">x_train</span>, <span class="cm-variable">y_train</span>), (<span class="cm-variable">x_test</span>, <span class="cm-variable">y_test</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">if</span> <span class="cm-variable">__name__</span> == <span class="cm-string">'__main__'</span>:</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment"># load training data and testing data</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  (<span class="cm-variable">x_train</span>, <span class="cm-variable">y_train</span>), (<span class="cm-variable">x_test</span>, <span class="cm-variable">y_test</span>) = <span class="cm-variable">load_data</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment"># define network structure</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">model</span> = <span class="cm-variable">Sequential</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">model</span>.<span class="cm-property">add</span>(<span class="cm-variable">Dense</span>(<span class="cm-variable">input_dim</span>=<span class="cm-number">28</span><span class="cm-operator">*</span><span class="cm-number">28</span>, <span class="cm-variable">units</span>=<span class="cm-number">500</span>, <span class="cm-variable">activation</span>=<span class="cm-string">'sigmoid'</span>))</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">model</span>.<span class="cm-property">add</span>(<span class="cm-variable">Dense</span>(<span class="cm-variable">units</span>=<span class="cm-number">500</span>, <span class="cm-variable">activation</span>=<span class="cm-string">'sigmoid'</span>))</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">model</span>.<span class="cm-property">add</span>(<span class="cm-variable">Dense</span>(<span class="cm-variable">units</span>=<span class="cm-number">10</span>, <span class="cm-variable">activation</span>=<span class="cm-string">'softmax'</span>))</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment"># set configurations</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">model</span>.<span class="cm-property">compile</span>(<span class="cm-variable">loss</span>=<span class="cm-string">'categorical_crossentropy'</span>,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">optimizer</span>=<span class="cm-string">'adam'</span>, <span class="cm-variable">metrics</span>=[<span class="cm-string">'accuracy'</span>])</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment"># train model</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">model</span>.<span class="cm-property">fit</span>(<span class="cm-variable">x_train</span>, <span class="cm-variable">y_train</span>, <span class="cm-variable">batch_size</span>=<span class="cm-number">100</span>, <span class="cm-variable">epochs</span>=<span class="cm-number">20</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment"># evaluate the model and output the accuracy</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">result</span> = <span class="cm-variable">model</span>.<span class="cm-property">evaluate</span>(<span class="cm-variable">x_test</span>, <span class="cm-variable">y_test</span>)</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-builtin">print</span>(<span class="cm-string">'Test Acc:'</span>, <span class="cm-variable">result</span>[<span class="cm-number">1</span>])</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1196px;"></div><div class="CodeMirror-gutters" style="display: none; height: 1196px;"></div></div></div></pre><h5><a name="result" class="md-header-anchor"></a><span>result</span></h5><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="python" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">1</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">2</span><span class="cm-variable">s</span> <span class="cm-number">214</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">1.1724</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.6558</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">2</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">146</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.3847</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.8964</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">3</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">132</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.2968</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9119</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">4</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">146</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.2535</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9268</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">5</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">2</span><span class="cm-variable">s</span> <span class="cm-number">185</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.2284</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9332</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">6</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">141</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.2080</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9369</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">7</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">135</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.1829</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9455</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">8</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">135</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.1617</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9520</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">9</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">136</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.1470</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9563</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">10</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">133</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.1340</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9607</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">11</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">141</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.1189</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9651</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">12</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">143</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.1056</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9696</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">13</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">140</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.0944</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9728</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">14</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">2</span><span class="cm-variable">s</span> <span class="cm-number">172</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.0808</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9773</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">15</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">145</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.0750</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9800</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">16</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">134</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.0643</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9826</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">17</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">132</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.0568</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9850</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">18</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">135</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.0510</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9873</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">19</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">134</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.0434</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9898</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Epoch</span> <span class="cm-number">20</span><span class="cm-operator">/</span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">134</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span> <span class="cm-operator">-</span> <span class="cm-variable">loss</span>: <span class="cm-number">0.0398</span> <span class="cm-operator">-</span> <span class="cm-variable">acc</span>: <span class="cm-number">0.9906</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">10000</span><span class="cm-operator">/</span><span class="cm-number">10000</span> [==============================] <span class="cm-operator">-</span> <span class="cm-number">1</span><span class="cm-variable">s</span> <span class="cm-number">79</span><span class="cm-variable">us</span><span class="cm-operator">/</span><span class="cm-variable">step</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Test</span> <span class="cm-variable">Acc</span>: <span class="cm-number">0.9439</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 966px;"></div><div class="CodeMirror-gutters" style="display: none; height: 966px;"></div></div></div></pre><p><span>可以发现每次做完一个epoch的update后，手写数字识别的准确率都有上升，最终训练好的model识别准确率等于94.39%</span></p><p><span>注：把activation function从sigmoid换成relu可以使识别准确率更高，这里不再重复试验</span></p></div>
+</body>
+</html>
