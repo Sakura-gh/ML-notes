@@ -30,6 +30,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [10_Keras](https://sakura-gh.github.io/ML-notes/ML-notes-html/10_Keras.html)
 
+[11_Convolutional Neural Network part1](https://sakura-gh.github.io/ML-notes/ML-notes-html/11_Convolutional-Neural-Network-part1.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -52,11 +54,15 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [机器学习系列10-手写数字识别(Keras2.0)](https://blog.csdn.net/weixin_44406200/article/details/104328947)
 
+[机器学习系列11-卷积神经网络CNN part1](https://blog.csdn.net/weixin_44406200/article/details/104370738)
+
 ##### 代码链接：
 
 [Gradient Descent Demo(Adagrad)]( https://sakura-gh.github.io/ML-notes/code/Gradient-Descent-Demo/Gradient-Descent-Demo.html)
 
-[手写数字识别(Keras2.0)](/code/Digits-Detection/digits-detection.py)
+[手写数字识别(Keras2.0)](https://github.com/Sakura-gh/ML-notes/blob/master/code/Digits-Detection/digits-detection.py)
+
+[手写数字识别CNN实现(Keras2.0)](https://github.com/Sakura-gh/ML-notes/blob/master/code/Digits-Detection/digits-detection-cnn.py)
 
 ##### LICENSE:
 
