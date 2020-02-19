@@ -1,6 +1,8 @@
 # Convolutional Neural network(part 1)
 
-> CNN常常被用在影像处理上
+> CNN常常被用在影像处理上，它的theory base就是三个property，和两个架构
+> convolution 架构：针对property 1和property 2
+> max pooling架构：针对property 3
 
 #### Why CNN for Image？
 
@@ -23,9 +25,9 @@
 
 虽然CNN看起来，它的运作比较复杂，但事实上，它的模型比DNN还要更简单，我们就是用prior knowledge，去把原来fully connected的layer里面的一些参数拿掉，就变成CNN
 
-##### Why can we discard some parameters
+##### Three Property for CNN theory base
 
-为什么我们有可能把一些参数拿掉？为什么我们有可能只用比较少的参数就可以来做图像处理这件事情？下面列出三个对影像处理的观察：
+为什么我们有可能把一些参数拿掉？为什么我们有可能只用比较少的参数就可以来做图像处理这件事情？下面列出三个对影像处理的观察：(**这也是CNN架构提出的基础所在！！！**)
 
 ###### Some patterns are much smaller than the whole image
 
