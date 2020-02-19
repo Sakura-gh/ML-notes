@@ -2,6 +2,10 @@
 
 notes about machine learning
 
+很喜欢一句话：**应用之道，存乎一心**
+
+与大家共勉
+
 ##### pages
 
 the github page is: https://Sakura-gh.github.io/ML-notes
@@ -32,6 +36,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [11_Convolutional Neural Network part1](https://sakura-gh.github.io/ML-notes/ML-notes-html/11_Convolutional-Neural-Network-part1.html)
 
+[12_Convolutional Neural Network part2](https://sakura-gh.github.io/ML-notes/ML-notes-html/12_Convolutional-Neural-Network-part2.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -55,6 +61,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 [机器学习系列10-手写数字识别(Keras2.0)](https://blog.csdn.net/weixin_44406200/article/details/104328947)
 
 [机器学习系列11-卷积神经网络CNN part1](https://blog.csdn.net/weixin_44406200/article/details/104370738)
+
+[机器学习系列12-卷积神经网络CNN part2](https://blog.csdn.net/weixin_44406200/article/details/104392592)
 
 ##### 代码链接：
 
