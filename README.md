@@ -6,6 +6,8 @@ notes about machine learning
 
 与大家共勉
 
+ps：如果我的笔记对你有帮助，给个star叭！
+
 ##### pages
 
 the github page is: https://Sakura-gh.github.io/ML-notes
