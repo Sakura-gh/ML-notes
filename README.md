@@ -74,7 +74,7 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 ##### LICENSE:
 
-Apache License 2.0
+GPL-2.0
 
 ##### 温馨提示：
 
