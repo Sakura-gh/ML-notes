@@ -16,7 +16,7 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 ##### keras实践经验：
 
-[keras-tips](https://github.com/sakura-gh/ML-notes/keras-tips.md)
+[keras-tips](https://github.com/Sakura-gh/ML-notes/blob/master/keras-tips.md)
 
 ##### html链接：
 
