@@ -14,6 +14,10 @@ the github page is: https://Sakura-gh.github.io/ML-notes
 
 you can also visit gitee page for quicker Internet in China: https://Sakura-gh.gitee.io/ml-notes
 
+##### keras实践经验：
+
+[keras-tips](https://github.com/sakura-gh/ML-notes/keras-tips.md)
+
 ##### html链接：
 
 [1_Introduction]( https://sakura-gh.github.io/ML-notes/ML-notes-html/1_Introduction.html)
