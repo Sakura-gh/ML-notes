@@ -46,6 +46,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [13_Tips for Deep Learning](https://sakura-gh.github.io/ML-notes/ML-notes-html/13_Tips-for-Deep-Learning.html)
 
+[14_Why Deep](https://sakura-gh.github.io/ML-notes/ML-notes-html/14_Why-Deep.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -73,6 +75,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 [机器学习系列12-卷积神经网络CNN part2](https://blog.csdn.net/weixin_44406200/article/details/104392592)
 
 [机器学习系列13-深度学习的技巧和优化方法](https://blog.csdn.net/weixin_44406200/article/details/104430737)
+
+[机器学习系列14-为什么要做“深度”学习](https://blog.csdn.net/weixin_44406200/article/details/104452873)
 
 ##### 代码链接：
 
