@@ -6,7 +6,7 @@ notes about machine learning
 
 ps：如果我的笔记对你有帮助，给个star叭！
 
-> 做了一段时间的笔记，发现真正去做project的时候，自己还是很生疏的，machine learning理论学习得再详尽，最终也还是要落于实践才行，这段时间我将陆续将自己所做的几个Assignment上传至github上，尽量注释详细，并使用多种方法进行对比验证
+> 做了一段时间的笔记，发现真正去做project的时候，自己还是很生疏的，machine learning理论学习得再详尽，最终也还是要落于实践才行，这段时间我将陆续将自己所做的几个Assignment上传至github上，尽量注释详细，并使用多种方法进行对比验证：https://github.com/Sakura-gh/ML-assignments
 
 ##### pages
 
