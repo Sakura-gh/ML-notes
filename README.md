@@ -88,8 +88,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 ##### Assignments链接：
 
-- PM2.5预测：[Regression](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/Assignment1)
-- 年收入预测：[Classification](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/Assignment2)
+- [PM2.5预测：Regression](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/Assignment1)
+- [年收入预测：Classification](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/Assignment2)
 
 ##### LICENSE:
 
