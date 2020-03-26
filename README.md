@@ -2,11 +2,11 @@
 
 notes about machine learning
 
-很喜欢一句话：**应用之道，存乎一心**
-
-与大家共勉
+很喜欢一句话：**应用之道，存乎一心**，与大家共勉
 
 ps：如果我的笔记对你有帮助，给个star叭！
+
+> 做了一段时间的笔记，发现真正去做project的时候，自己还是很生疏的，machine learning理论学习得再详尽，最终也还是要落于实践才行，这段时间我将陆续将自己所做的几个Assignment上传至github上，尽量注释详细，并使用多种方法进行对比验证
 
 ##### pages
 
@@ -85,6 +85,11 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 [手写数字识别(Keras2.0)](https://github.com/Sakura-gh/ML-notes/blob/master/code/Digits-Detection/digits-detection.py)
 
 [手写数字识别CNN实现(Keras2.0)](https://github.com/Sakura-gh/ML-notes/blob/master/code/Digits-Detection/digits-detection-cnn.py)
+
+##### Assignments链接：
+
+- PM2.5预测：[Regression](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/Assignment1)
+- 年收入预测：[Classification](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/Assignment2)
 
 ##### LICENSE:
 
