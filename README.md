@@ -6,7 +6,7 @@ notes about machine learning
 
 ps：如果我的笔记对你有帮助，给个star叭！
 
-> ML配套Assignment (ppt+code)：https://github.com/Sakura-gh/ML-assignments
+> ML配套Assignments (ppt+code)：https://github.com/Sakura-gh/ML-assignments
 >
 > 内容包括：Regression, Classification, CNN, RNN, Explainable AI, Adversarial Attack, Network Compression, Seq2Seq, GAN, Transfer Learning, Meta Learning, Life-long Learning, Reforcement Learning. 
 
