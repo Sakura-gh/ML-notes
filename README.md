@@ -6,7 +6,9 @@ notes about machine learning
 
 ps：如果我的笔记对你有帮助，给个star叭！
 
-> 做了一段时间的笔记，发现真正去做project的时候，自己还是很生疏的，machine learning理论学习得再详尽，最终也还是要落于实践才行，这段时间我将陆续将自己所做的几个Assignment上传至github上，尽量注释详细，并使用多种方法进行对比验证：https://github.com/Sakura-gh/ML-assignments
+> ML配套Assignment (ppt+code)：https://github.com/Sakura-gh/ML-assignments
+>
+> 内容包括：Regression, Classification, CNN, RNN, Explainable AI, Adversarial Attack, Network Compression, Seq2Seq, GAN, Transfer Learning, Meta Learning, Life-long Learning, Reforcement Learning. 
 
 ##### pages
 
@@ -88,8 +90,27 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 ##### Assignments链接：
 
-- [PM2.5预测：Regression](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/Assignment1)
-- [年收入预测：Classification](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/Assignment2)
+- [1_Regression](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/1_Regression)
+- [2_Classification](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/2_Classification)
+- [3_CNN](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/3_CNN)
+- [4_RNN](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/4_RNN)
+- [5_Explainable AI](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/5_Explainable-AI)
+- [6_Adversarial Attack](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/6_Adversarial-Attack)
+- [7_Network Compression](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/7_Network-Compression)
+- [8_Seq2Seq](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/8_Seq2Seq)
+- [9_Unsupervised Learning](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/9_Unsupervised-Learning)
+
+- [10_Anomaly Detection](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/10_Anomaly-Detection)
+
+- [11_GAN](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/11_GAN)
+
+- [12_Transfer Learning](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/12_Transfer-Learning)
+
+- [13_Meta Learning](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/13_Meta-Learning)
+
+- [14_Life Long Learning](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/14_Life-Long-Learning)
+
+- [15_Reinforcement Learning](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/15_Reinforcement-Learning)
 
 ##### LICENSE:
 
