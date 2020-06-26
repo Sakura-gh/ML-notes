@@ -4,7 +4,11 @@ notes about machine learning
 
 很喜欢一句话：**应用之道，存乎一心**，与大家共勉
 
-ps：如果我的笔记对你有帮助，给个star叭！
+ps：如果我的笔记对你有帮助，给个star叭！也欢迎大家点一点<a href="https://tracking.gitads.io/?repo=ML-notes">链接</a>支持一下啦~
+
+<a href="https://tracking.gitads.io/?repo=ML-notes"><img src="https://images.gitads.io/ML-notes" alt="GitAds"/></a>
+
+
 
 > ML配套Assignments (ppt+code)：https://github.com/Sakura-gh/ML-assignments
 >
