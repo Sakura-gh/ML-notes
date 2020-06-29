@@ -56,6 +56,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [15_Semi-supervised Learning](https://sakura-gh.github.io/ML-notes/ML-notes-html/15_Semi-supervised-Learning.html)
 
+[16_Unsupervised Learning Introduction](https://sakura-gh.github.io/ML-notes/ML-notes-html/16_Unsupervised-Learning-Introduction.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -87,6 +89,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 [机器学习系列14-为什么要做“深度”学习](https://blog.csdn.net/weixin_44406200/article/details/104452873)
 
 [机器学习系列15-半监督学习](https://blog.csdn.net/weixin_44406200/article/details/106991717)
+
+[机器学习系列16-无监督学习引言](https://blog.csdn.net/weixin_44406200/article/details/107029531)
 
 ##### 代码链接：
 
