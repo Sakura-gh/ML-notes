@@ -1,4 +1,6 @@
-# Unsupervised Learning: PCA
+# Unsupervised Learning: PCA(Ⅰ)
+
+> 本文将主要介绍PCA算法的数学推导过程
 
 上一篇文章提到，PCA算法认为降维就是一个简单的linear function，它的input x和output z之间是linear transform，即$z=Wx$，PCA要做的，就是根据$x$**把W给找出来**($z$未知)
 
@@ -203,5 +205,4 @@ PCA可以让不同dimension之间的covariance变为0，即不同new feature之�
 
 <center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/cov3.png" width="60%"/></center>
 
-#### Another Point of View
-
+本文主要介绍的是PCA的数学推导，如果你理解起来有点困难，那下一篇文章将会从另一个角度解释PCA算法的原理~
