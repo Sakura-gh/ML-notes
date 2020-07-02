@@ -58,6 +58,10 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [16_Unsupervised Learning Introduction](https://sakura-gh.github.io/ML-notes/ML-notes-html/16_Unsupervised-Learning-Introduction.html)
 
+[17_Unsupervised Learning PCA part1](https://sakura-gh.github.io/ML-notes/ML-notes-html/17_Unsupervised-Learning-PCA-part1.html)
+
+[18_Unsupervised Learning PCA part2](https://sakura-gh.github.io/ML-notes/ML-notes-html/18_Unsupervised-Learning-PCA-part2.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
