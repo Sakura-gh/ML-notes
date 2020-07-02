@@ -1,5 +1,7 @@
 # ML-notes
 
+[![GitHub issues](https://img.shields.io/github/issues/Sakura-gh/ML-notes?color=ffa07a)](https://github.com/Sakura-gh/ML-notes/issues) [![GitHub forks](https://img.shields.io/github/forks/Sakura-gh/ML-notes?color=20b2aa)](https://github.com/Sakura-gh/ML-notes/network) [![GitHub stars](https://img.shields.io/github/stars/Sakura-gh/ML-notes?color=66cdaa)](https://github.com/Sakura-gh/ML-notes/stargazers) [![GitHub license](https://img.shields.io/github/license/Sakura-gh/ML-notes?color=88cff1)](https://github.com/Sakura-gh/ML-notes/blob/master/LICENSE)
+
 notes about machine learning
 
 很喜欢一句话：**应用之道，存乎一心**，与大家共勉
@@ -7,8 +9,6 @@ notes about machine learning
 ps：如果我的笔记对你有帮助，给个star叭！也希望大家点一点<a href="https://tracking.gitads.io/?repo=ML-notes">链接</a>，给我更多的更新动力~
 
 <a href="https://tracking.gitads.io/?repo=ML-notes"><img src="https://images.gitads.io/ML-notes" alt="GitAds"/></a>
-
-
 
 > ML配套Assignments (ppt+code)：https://github.com/Sakura-gh/ML-assignments
 >
