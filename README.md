@@ -62,6 +62,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [18_Unsupervised Learning PCA part2](https://sakura-gh.github.io/ML-notes/ML-notes-html/18_Unsupervised-Learning-PCA-part2.html)
 
+[19_Matrix Factorization](https://sakura-gh.github.io/ML-notes/ML-notes-html/19_Matrix-Factorization.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -100,6 +102,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [机器学习系列18-无监督学习之PCA深入探讨(Ⅱ)](https://blog.csdn.net/weixin_44406200/article/details/107082680)
 
+[机器学习系列19-矩阵分解&推荐系统初步](https://blog.csdn.net/weixin_44406200/article/details/107099894)
+
 ##### 代码链接：
 
 [Gradient Descent Demo(Adagrad)]( https://sakura-gh.github.io/ML-notes/code/Gradient-Descent-Demo/Gradient-Descent-Demo.html)
@@ -107,38 +111,6 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 [手写数字识别(Keras2.0)](https://github.com/Sakura-gh/ML-notes/blob/master/code/Digits-Detection/digits-detection.py)
 
 [手写数字识别CNN实现(Keras2.0)](https://github.com/Sakura-gh/ML-notes/blob/master/code/Digits-Detection/digits-detection-cnn.py)
-
-##### Assignments链接：
-
-[1_Regression](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/1_Regression)
-
-[2_Classification](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/2_Classification)
-
-[3_CNN](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/3_CNN)
-
-[4_RNN](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/4_RNN)
-
-[5_Explainable AI](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/5_Explainable-AI)
-
-[6_Adversarial Attack](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/6_Adversarial-Attack)
-
-[7_Network Compression](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/7_Network-Compression)
-
-[8_Seq2Seq](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/8_Seq2Seq)
-
-[9_Unsupervised Learning](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/9_Unsupervised-Learning)
-
-[10_Anomaly Detection](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/10_Anomaly-Detection)
-
-[11_GAN](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/11_GAN)
-
-[12_Transfer Learning](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/12_Transfer-Learning)
-
-[13_Meta Learning](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/13_Meta-Learning)
-
-[14_Life Long Learning](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/14_Life-Long-Learning)
-
-[15_Reinforcement Learning](https://github.com/Sakura-gh/ML-assignments/tree/master/Assignment/15_Reinforcement-Learning)
 
 ##### LICENSE:
 
