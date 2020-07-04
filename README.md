@@ -112,6 +112,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [手写数字识别CNN实现(Keras2.0)](https://github.com/Sakura-gh/ML-notes/blob/master/code/Digits-Detection/digits-detection-cnn.py)
 
+[PyTorch简易入门](https://github.com/Sakura-gh/ML-notes/blob/master/code/pytorch)
+
 ##### LICENSE:
 
 GPL-2.0
