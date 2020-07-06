@@ -64,6 +64,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [19_Matrix Factorization](https://sakura-gh.github.io/ML-notes/ML-notes-html/19_Matrix-Factorization.html)
 
+[20_Unsupervised Learning Word Embedding](https://sakura-gh.github.io/ML-notes/ML-notes-html/20_Unsupervised-Learning-Word-Embedding.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -103,6 +105,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 [机器学习系列18-无监督学习之PCA深入探讨(Ⅱ)](https://blog.csdn.net/weixin_44406200/article/details/107082680)
 
 [机器学习系列19-矩阵分解&推荐系统初步](https://blog.csdn.net/weixin_44406200/article/details/107099894)
+
+[机器学习系列20-无监督学习之词嵌入](https://blog.csdn.net/weixin_44406200/article/details/107168089)
 
 ##### 代码链接：
 
