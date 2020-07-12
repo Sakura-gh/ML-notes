@@ -66,6 +66,14 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [20_Unsupervised Learning Word Embedding](https://sakura-gh.github.io/ML-notes/ML-notes-html/20_Unsupervised-Learning-Word-Embedding.html)
 
+[21_Unsupervised Learning Neighbor Embedding](https://sakura-gh.github.io/ML-notes/ML-notes-html/21_Unsupervised-Learning-Neighbor-Embedding.html)
+
+[22_Unsupervised Learning Deep Auto-encoder](https://sakura-gh.github.io/ML-notes/ML-notes-html/22_Unsupervised-Learning-Deep-Auto-encoder.html)
+
+[23_Unsupervised Learning Generation](https://sakura-gh.github.io/ML-notes/ML-notes-html/23_Unsupervised-Generation.html)
+
+[24_Transfer Learning](https://sakura-gh.github.io/ML-notes/ML-notes-html/24_Transfer-Learning.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -107,6 +115,14 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 [机器学习系列19-矩阵分解&推荐系统初步](https://blog.csdn.net/weixin_44406200/article/details/107099894)
 
 [机器学习系列20-无监督学习之词嵌入](https://blog.csdn.net/weixin_44406200/article/details/107168089)
+
+[机器学习系列21-无监督学习之近邻嵌入](https://blog.csdn.net/weixin_44406200/article/details/107305230)
+
+[机器学习系列22-无监督学习之自编码器](https://blog.csdn.net/weixin_44406200/article/details/107305267)
+
+[机器学习系列23-无监督学习之生成模型](https://blog.csdn.net/weixin_44406200/article/details/107305305)
+
+[机器学习系列24-迁移学习](https://blog.csdn.net/weixin_44406200/article/details/107305326)
 
 ##### 代码链接：
 
