@@ -97,9 +97,11 @@ $$
 
 如果通过拉普拉斯特征映射找到$z$之后再对其利用K-means做聚类，就叫做谱聚类(spectral clustering)
 
-参考文献：*Belkin, M., Niyogi, P. Laplacian eigenmaps and spectral techniques for embedding and clustering. Advances in neural information processing systems . 2002*
+注：有关拉普拉斯图矩阵的相关内容可参考之前的半监督学习笔记：[15_Semi-supervised Learning](https://sakura-gh.github.io/ML-notes/ML-notes-html/15_Semi-supervised-Learning.html)
 
 <center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/le3.png" width="60%" /></center>
+
+参考文献：*Belkin, M., Niyogi, P. Laplacian eigenmaps and spectral techniques for embedding and clustering. Advances in neural information processing systems . 2002*
 
 #### t-SNE
 
