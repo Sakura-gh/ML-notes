@@ -148,15 +148,15 @@ GPL-2.0
 
 图片加载可能会有些许缓慢，请耐心等待\\(\^o\^)/
 
-##### 
+##### 更新说明
 
 欢迎大家关注微信公众号"Sakura的知识库"，推送我最新的学习笔记~
 
 <center><img src="./img/wx.jpg" /></center>
 
-您的支持就是我最大的更新动力~
+如果读后有收获，请作者喝杯咖啡吧，您的支持就是我最大的更新动力~  
 
-
+![zs](https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/zs.png)
 
 ##### ML GPU
 
