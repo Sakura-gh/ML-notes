@@ -6,9 +6,7 @@ notes about machine learning
 
 很喜欢一句话：**应用之道，存乎一心**，与大家共勉
 
-ps：如果我的笔记对你有帮助，给个star叭！也希望大家点一点<a href="https://tracking.gitads.io/?repo=ML-notes">链接</a>，给我更多的更新动力~
-
-<a href="https://tracking.gitads.io/?repo=ML-notes"><img src="https://images.gitads.io/ML-notes" alt="GitAds"/></a>
+ps：如果我的笔记对你有帮助，给个star叭！
 
 > ML配套Assignments (ppt+code)：https://github.com/Sakura-gh/ML-assignments
 >
@@ -74,6 +72,10 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [24_Transfer Learning](https://sakura-gh.github.io/ML-notes/ML-notes-html/24_Transfer-Learning.html)
 
+[25_Support Vector Machine](https://sakura-gh.github.io/ML-notes/ML-notes-html/25_Support-Vector-Machine.html)
+
+[26_Recurrent Neural Network part1](https://sakura-gh.github.io/ML-notes/ML-notes-html/26_Recurrent-Neural-Network-part1.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -124,6 +126,10 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [机器学习系列24-迁移学习](https://blog.csdn.net/weixin_44406200/article/details/107305326)
 
+[机器学习系列25-支持向量机](https://blog.csdn.net/weixin_44406200/article/details/107693177)
+
+[机器学习系列26-循环神经网络(Ⅰ)](https://blog.csdn.net/weixin_44406200/article/details/107693331)
+
 ##### 代码链接：
 
 [Gradient Descent Demo(Adagrad)]( https://sakura-gh.github.io/ML-notes/code/Gradient-Descent-Demo/Gradient-Descent-Demo.html)
@@ -142,8 +148,16 @@ GPL-2.0
 
 图片加载可能会有些许缓慢，请耐心等待\\(\^o\^)/
 
-##### 更新说明：
+##### 
 
-欢迎大家关注微信公众号"Sakura的知识库"，分享我在浙江大学计算机学院学习期间所记录的知识笔记和项目，机器学习笔记第一时间同步更新，方便大家阅读
+欢迎大家关注微信公众号"Sakura的知识库"，推送我最新的学习笔记~
 
 <center><img src="./img/wx.jpg" /></center>
+
+您的支持就是我最大的更新动力~
+
+
+
+##### ML GPU
+
+<a href="https://tracking.gitads.io/?repo=ML-notes"><img src="https://images.gitads.io/ML-notes" alt="GitAds"/></a>

@@ -2,6 +2,8 @@
 
 支持向量机(SVM)有两个特点：SVM=铰链损失(Hinge Loss)+核技巧(Kernel Method)
 
+注：建议先看这篇[博客](https://juejin.im/post/5d273c34e51d45599e019e4d)了解SVM基础知识后再看本文的分析
+
 #### Hinge Loss
 
 ##### Binary Classification
