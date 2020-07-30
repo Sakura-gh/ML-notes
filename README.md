@@ -6,10 +6,14 @@ notes about machine learning
 
 很喜欢一句话：**应用之道，存乎一心**，与大家共勉
 
-ps：如果我的笔记对你有帮助，给个star叭！
+ps：如果我的笔记对你有帮助，给个star叭！更多计算机相关笔记欢迎大家关注微信公众号"Sakura的知识库"
 
-> ML配套Assignments (ppt+code)：https://github.com/Sakura-gh/ML-assignments
->
+<center><img src="https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/wx.jpg" /></center>
+
+##### ML-Assignments
+
+ML配套Assignments (ppt+code)：https://github.com/Sakura-gh/ML-assignments
+
 > 内容包括：Regression, Classification, CNN, RNN, Explainable AI, Adversarial Attack, Network Compression, Seq2Seq, GAN, Transfer Learning, Meta Learning, Life-long Learning, Reforcement Learning. 
 
 ##### pages
@@ -17,10 +21,6 @@ ps：如果我的笔记对你有帮助，给个star叭！
 the github page is: https://Sakura-gh.github.io/ML-notes
 
 you can also visit gitee page for quicker Internet in China: https://Sakura-gh.gitee.io/ml-notes
-
-##### keras实践经验：
-
-[keras-tips](https://github.com/Sakura-gh/ML-notes/blob/master/keras-tips.md)
 
 ##### html链接：
 
@@ -138,6 +138,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [手写数字识别CNN实现(Keras2.0)](https://github.com/Sakura-gh/ML-notes/blob/master/code/Digits-Detection/digits-detection-cnn.py)
 
+[Keras实战小经验](https://github.com/Sakura-gh/ML-notes/blob/master/keras-tips.md)
+
 [PyTorch简易入门](https://github.com/Sakura-gh/ML-notes/blob/master/code/pytorch)
 
 ##### LICENSE:
@@ -148,16 +150,12 @@ GPL-2.0
 
 图片加载可能会有些许缓慢，请耐心等待\\(\^o\^)/
 
-##### 更新说明
-
-欢迎大家关注微信公众号"Sakura的知识库"，推送我最新的学习笔记~
-
-<center><img src="./img/wx.jpg" /></center>
+##### 赞赏作者
 
 如果读后有收获，请作者喝杯咖啡吧，您的支持就是我最大的更新动力~  
 
-![zs](https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/zs.png)
+<center><img src="https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/zs.png" width="60%"/></center>
 
 ##### ML GPU
 
-<a href="https://tracking.gitads.io/?repo=ML-notes"><img src="https://images.gitads.io/ML-notes" alt="GitAds"/></a>
+<center><a href="https://tracking.gitads.io/?repo=ML-notes"><img src="https://images.gitads.io/ML-notes" width="60%" alt="GitAds"/></a></center>
