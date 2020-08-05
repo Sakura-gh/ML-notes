@@ -76,6 +76,8 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [26_Recurrent Neural Network part1](https://sakura-gh.github.io/ML-notes/ML-notes-html/26_Recurrent-Neural-Network-part1.html)
 
+[27_Recurrent Neural Network part2](https://sakura-gh.github.io/ML-notes/ML-notes-html/27_Recurrent-Neural-Network-part2.html)
+
 ##### csdn博客链接：
 
 [机器学习系列1-机器学习概念及介绍](https://blog.csdn.net/weixin_44406200/article/details/104060561)
@@ -128,7 +130,9 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [机器学习系列25-支持向量机](https://blog.csdn.net/weixin_44406200/article/details/107693177)
 
-[机器学习系列26-循环神经网络(Ⅰ)](https://blog.csdn.net/weixin_44406200/article/details/107693331)
+[机器学习系列26-循环神经网络RNN(Ⅰ)](https://blog.csdn.net/weixin_44406200/article/details/107693331)
+
+[机器学习系列27-循环神经网络RNN(Ⅱ)](https://blog.csdn.net/weixin_44406200/article/details/107812374)
 
 ##### 代码链接：
 
@@ -164,4 +168,4 @@ GPL-2.0
 
 ##### ML GPU：
 
-<center><a href="https://tracking.gitads.io/?repo=ML-notes"><img src="https://images.gitads.io/ML-notes" width="60%" alt="GitAds"/></a></center>
+<center><a href="https://tracking.gitads.io/?repo=ML-notes"><img src="https://images.gitads.io/ML-notes" width="80%" alt="GitAds"/></a></center>
