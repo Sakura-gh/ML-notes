@@ -12,7 +12,7 @@
 
 绿色的方块指的是model，即用来解决问题的模型(function set)。在这些task里面有不同的model，也就是说，同样的task，我们可以用不同的方法来解它，比如linear model、Non-linear model(deep Learning、SVM、decision tree、K-NN...)
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/learningMap.png?raw=true" alt="learning map" style="width: 60%;" /></center>
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/learningMap.png" alt="learning map" width="60%;" /></center>
 
 #### Supervised Learning(监督学习)
 
@@ -68,7 +68,7 @@ regression和classification的区别是，我们要机器输出的东西的类�
 
 在Semi-supervised Learning的技术里面，这些没有labeled的data，对机器学习也是有帮助的
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/semi-supervised-Learning.png?raw=true" alt="semi-supervised" style="width:60%;" /></center>
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/semi-supervised-Learning.png" alt="semi-supervised" width="60%;" /></center>
 
 #### Transfer Learning(迁移学习)
 
@@ -78,7 +78,7 @@ regression和classification的区别是，我们要机器输出的东西的类�
 
 Transfer Learning要解决的问题是，这一堆不相干的data可以对结果带来什么样的帮助
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/transfer-Learning.png?raw=true" alt="transfer" style="width:60%;" /></center>
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/transfer-Learning.png" alt="transfer" width="60%;" /></center>
 
 #### Unsupervised Learning(无监督学习)
 
@@ -90,7 +90,7 @@ Transfer Learning要解决的问题是，这一堆不相干的data可以对结�
 
 又比如，我们带机器去逛动物园，给他看大量的动物的图片，对于unsupervised learning来说，我们的data中只有给function的输入的大量图片，没有任何的输出标注；在这种情况下，机器该怎么学会根据testing data的输入来自己生成新的图片？
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/unsupervised-Learning.png?raw=true" alt="unsupervised" style="width:60%;" /></center>
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/unsupervised-Learning.png" width="60%;" /></center>
 
 #### Structured Learning(结构化学习)
 
@@ -104,7 +104,7 @@ Transfer Learning要解决的问题是，这一堆不相干的data可以对结�
 
 比如**GAN**也是structured Learning的一种方法
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/structured-Learning.png?raw=true" alt="structured" style="width:60%;" /></center>
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/structured-Learning.png" alt="structured" width="60%;" /></center>
 
 #### Reinforcement Learning(强化学习)
 
@@ -116,7 +116,7 @@ Transfer Learning要解决的问题是，这一堆不相干的data可以对结�
 
 * 比如训练一个聊天机器人，让它跟客人直接对话；如果客人勃然大怒把电话挂掉了，那机器就学到一件事情，刚才做错了，它不知道自己哪里做错了，必须自己回去反省检讨到底要如何改进，比如一开始不应该打招呼吗？还是中间不能骂脏话之类的
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/reinforcement-Learning.png?raw=true" alt="reinforcement" style="width: 60%;" /></center>
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/reinforcement-Learning.png" alt="reinforcement" width="60%;" /></center>
 
 再拿下棋这件事举例，supervised Learning是说看到眼前这个棋盘，告诉机器下一步要走什么位置；而reinforcement Learning是说让机器和对手互弈，下了好几手之后赢了，机器就知道这一局棋下的不错，但是到底哪一步是赢的关键，机器是不知道的，他只知道自己是赢了还是输了
 

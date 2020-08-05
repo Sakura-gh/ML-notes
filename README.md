@@ -6,9 +6,11 @@ notes about machine learning
 
 很喜欢一句话：**应用之道，存乎一心**，与大家共勉
 
-ps：如果我的笔记对你有帮助，给个star叭！查看机器学习笔记的PDF版本(20w余字)以及更多计算机相关笔记，欢迎大家关注微信公众号"Sakura的知识库"~
+ps：如果我的笔记对你有帮助，给个star叭！查看机器学习笔记的PDF订阅版(**301页**)以及更多计算机相关笔记，欢迎大家关注微信公众号"Sakura的知识库"~
 
 <center><img src="https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/wx.jpg" /></center>
+
+<center><img src="https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/ml-book.png" width="60%" /></center>
 
 ##### ML-Assignments
 

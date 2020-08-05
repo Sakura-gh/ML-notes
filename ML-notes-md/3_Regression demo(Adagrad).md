@@ -245,11 +245,13 @@ plt.show()
 
 <center><img src="https://img-blog.csdnimg.cn/2020012315075713.png" width="60%;"/></center>
 
-#### 这个问题明明很简单，可是只有两个参数b和w，gradient descent搞半天都搞不定，那以后做neural network有数百万个参数的时候，要怎么办呢
+这个问题明明很简单，可是只有两个参数b和w，gradient descent搞半天都搞不定，那以后做neural network有数百万个参数的时候，要怎么办呢
+
 这个就是**一室不治何以国家为**的概念
 
-#### 于是这里就要放大招了！！！——Adagrad
-我们给b和w客制化的learning rate，让它们两个的learning rate不一样
+#### 解决方案：Adagrad
+
+我们给b和w订制化的learning rate，让它们两个的learning rate不一样
 
 
 ```python

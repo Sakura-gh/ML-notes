@@ -40,8 +40,7 @@ $f()$： 表示我们要找的function
 
 $y$：    表示function的output，即宝可梦进化后的cp值，是一个scalar
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/pokeman-parameters.png?raw=true" alt="pokeman-parameters" style="width:60%;"/></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/pokeman-parameters.png" alt="pokeman-parameters" style="width:60%;"/></center>
 #### Regression的具体过程
 
 ##### 回顾一下machine Learning的三个步骤：
@@ -72,8 +71,7 @@ y代表进化后的cp值，$X_{cp}$代表进化前的cp值，w和b代表未知�
 
 **b**：  bias
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/model.png?raw=true" alt="model" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/model.png" alt="model" style="width:60%;" /></center>
 ##### Step2：Goodness of Function
 
 ###### 参数说明
@@ -84,8 +82,7 @@ $\widehat{y}^i$：用$\widehat{y}$表示一个实际观察到的object输出，�
 
 注：由于regression的输出值是scalar，因此$\widehat{y}$里面并没有component，只是一个简单的数值；但是未来如果考虑structured Learning的时候，我们output的object可能是有structured的，所以我们还是会需要用上标下标来表示一个完整的output的object和它包含的component
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/goodness-of-function.png?raw=true" alt="goodness-of-function" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/goodness-of-function.png" alt="goodness-of-function" style="width:60%;" /></center>
 ###### Loss function 损失函数
 
 为了衡量function set中的某个function的好坏，我们需要一个评估函数，即==Loss function==，损失函数，简称`L`；`loss function`是一个function的function
@@ -104,16 +101,14 @@ $$ L(f)=L(w,b)=\sum_{n=1}^{10}(\widehat{y}^n-(b+w \cdot {x}^n_{cp}))^2$$
 
 如果$L(f)$越大，说明该function表现得越不好；$L(f)$越小，说明该function表现得越好
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/loss-function.png?raw=true" alt="loss-function" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/loss-function.png" alt="loss-function" style="width:60%;" /></center>
 ###### Loss function可视化
 
 下图中是loss function的可视化，该图中的每一个点都代表一组`(w,b)`，也就是对应着一个`function`；而该点的颜色对应着的loss function的结果`L(w,b)`，它表示该点对应function的表现有多糟糕，颜色越偏红色代表Loss的数值越大，这个function的表现越不好，越偏蓝色代表Loss的数值越小，这个function的表现越好
 
 比如图中用红色箭头标注的点就代表了b=-180 , w=-2对应的function，即$y=-180-2 \cdot x_{cp}$，该点所在的颜色偏向于红色区域，因此这个function的loss比较大，表现并不好
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/loss-figure.png?raw=true" alt="loss-figure" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/loss-figure.png" alt="loss-figure" style="width:60%;" /></center>
 ##### Step3：Pick the Best Function
 
 我们已经确定了loss function，他可以衡量我们的model里面每一个function的好坏，接下来我们要做的事情就是，从这个function set里面，挑选一个最好的function
@@ -126,8 +121,7 @@ $$w^*,b^*={arg}\ \underset{w,b}{min} L(w,b)={arg}\  \underset{w,b}{min} \sum\lim
 
 也就是那个使$L(f)=L(w,b)=Loss$最小的$f$或$(w,b)$，就是我们要找的$f^*$或$(w^*,b^*)$(有点像极大似然估计的思想)
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/best-function.png?raw=true" alt="best-function" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/best-function.png" alt="best-function" style="width:60%;" /></center>
 利用线性代数的知识，可以解得这个closed-form solution，但这里采用的是一种更为普遍的方法——==gradient descent(梯度下降法)==
 
 #### Gradient Descent 梯度下降
@@ -168,7 +162,7 @@ $$w^*={arg}\ \underset{w}{min} L(w) $$ 我们的目标就是找到这个使Loss�
 
     但幸运的是，在linear regression上，是没有local minima的，因此可以使用这个方法
 
-    <center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/gradient-descent.png?raw=true" alt="gradient-descent" style="width:60%;" /></center>
+    <center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/gradient-descent.png" alt="gradient-descent" style="width:60%;" /></center>
 
 ##### 两个参数的问题
 
@@ -205,16 +199,14 @@ $$
 
 注：这里两个方向的η(learning rate)必须保持一致，这样每次更新坐标的step size是等比例缩放的，保证坐标前进的方向始终和梯度下降的方向一致；否则坐标前进的方向将会发生偏移
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/gradient-two-parameters.png?raw=true" alt="gradient-two-parameters" style="width: 60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/gradient-two-parameters.png" alt="gradient-two-parameters" style="width: 60%;" /></center>
 ##### Gradient Descent的缺点
 
 gradient descent有一个令人担心的地方，也就是我之前一直提到的，它每次迭代完毕，寻找到的梯度为0的点必然是极小值点，local minima；却不一定是最小值点，global minima
 
 这会造成一个问题是说，如果loss function长得比较坑坑洼洼(极小值点比较多)，而每次初始化$w^0$的取值又是随机的，这会造成每次gradient descent停下来的位置都可能是不同的极小值点；而且当遇到梯度比较平缓(gradient≈0)的时候，gradient descent也可能会效率低下甚至可能会stuck卡住；也就是说通过这个方法得到的结果，是看人品的(滑稽
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/gradient-stuck.png?raw=true" alt="gradient-stuck" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/gradient-stuck.png" alt="gradient-stuck" style="width:60%;" /></center>
 但是！在==linear regression==里，loss function实际上是**convex**的，是一个**凸函数**，是没有local optimal局部最优解的，他只有一个global minima，visualize出来的图像就是从里到外一圈一圈包围起来的椭圆形的等高线(就像前面的等高线图)，因此随便选一个起始点，根据gradient descent最终找出来的，都会是同一组参数
 
 #### 回到pokemon的问题上来
@@ -238,8 +230,7 @@ $$
 
 当然我们真正关心的是generalization的case，也就是用这个model去估测新抓到的pokemon，误差会有多少，这也就是所谓的testing data的误差；于是又抓了10只新的pokemon，算出来的Average Error on Testing Data为$\sum\limits_{i=1}^{10}e^i=35.0$；可见training data里得到的误差一般是要比testing data要小，这也符合常识
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/results.png?raw=true" alt="results" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/results.png" alt="results" style="width:60%;" /></center>
 ##### How can we do better?
 
 我们有没有办法做得更好呢？这时就需要我们重新去设计model；如果仔细观察一下上图的data，就会发现在原先的cp值比较大和比较小的地方，预测值是相当不准的
@@ -248,32 +239,26 @@ $$
 
 ###### 考虑$(x_{cp})^2$的model
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/Xcp-2.png?raw=true" alt="Xcp-2" style="width:50%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/Xcp-2.png" alt="Xcp-2" style="width:50%;" /></center>
 ###### 考虑$(x_{cp})^3$的model
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/Xcp-3.png?raw=true" alt="Xcp-3" style="width:50%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/Xcp-3.png" alt="Xcp-3" style="width:50%;" /></center>
 ###### 考虑$(x_{cp})^4$的model
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/Xcp-4.png?raw=true" alt="Xcp-4" style="width:50%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/Xcp-4.png" alt="Xcp-4" style="width:50%;" /></center>
 ###### 考虑$(x_{cp})^5$的model
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/Xcp-5.png?raw=true" alt="Xcp-5" style="width:50%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/Xcp-5.png" alt="Xcp-5" style="width:50%;" /></center>
 ###### 5个model的对比
 
 这5个model的training data的表现：随着$(x_{cp})^i$的高次项的增加，对应的average error会不断地减小；实际上这件事情非常容易解释，实际上低次的式子是高次的式子的特殊情况(令高次项$(X_{cp})^i$对应的$w_i$为0，高次式就转化成低次式)
 
 也就是说，在gradient descent可以找到best function的前提下(多次式为Non-linear model，存在local optimal局部最优解，gradient descent不一定能找到global minima)，function所包含的项的次数越高，越复杂，error在training data上的表现就会越来越小；但是，我们关心的不是model在training data上的error表现，而是model在testing data上的error表现
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/Xcp-compare.png?raw=true" alt="compare" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/Xcp-compare.png" alt="compare" style="width:60%;" /></center>
 在training data上，model越复杂，error就会越低；但是在testing data上，model复杂到一定程度之后，error非但不会减小，反而会暴增，在该例中，从含有$(X_{cp})^4$项的model开始往后的model，testing data上的error出现了大幅增长的现象，通常被称为**overfitting过拟合**
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/Xcp-overfitting.png?raw=true" alt="overfitting" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/Xcp-overfitting.png" alt="overfitting" style="width:60%;" /></center>
 因此model不是越复杂越好，而是选择一个最适合的model，在本例中，包含$(X_{cp})^3$的式子是最适合的model
 
 ##### 进一步讨论其他参数
@@ -282,8 +267,7 @@ $$
 
 之前我们的model只考虑了宝可梦进化前的cp值，这显然是不对的，除了cp值外，还受到物种$x_s$的影响
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/hidden-factors.png?raw=true" alt="hidden-factors" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/hidden-factors.png" alt="hidden-factors" style="width:60%;" /></center>
 因此我们重新设计model：
 $$
 if \ \ x_s=Pidgey: \ \ \ \ \ \ \ y=b_1+w_1\cdot x_{cp} \\
@@ -295,12 +279,10 @@ $$
 
 这里引入$δ(条件表达式)$的概念，当条件表达式为true，则δ为1；当条件表达式为false，则δ为0，因此可以通过下图的方式，将4个if语句转化成同一个linear model
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/new-model.png?raw=true" alt="new-model" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/new-model.png" alt="new-model" style="width:60%;" /></center>
 有了上面这个model以后，我们分别得到了在training data和testing data上测试的结果：
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/new-results.png?raw=true" alt="new-results" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/new-results.png" alt="new-results" style="width:60%;" /></center>
 ###### Hp值$x_{hp}$、height值$x_h$、weight值$x_w$的影响
 
 考虑所有可能有影响的参数，设计出这个最复杂的model：
@@ -329,8 +311,7 @@ $$
 
 如果我们有一个比较平滑的function，由于输出对输入是不敏感的，测试的时候，一些noises噪声对这个平滑的function的影响就会比较小，而给我们一个比较好的结果
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/regularization.png?raw=true" alt="regularization" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/regularization.png" alt="regularization" style="width:60%;" /></center>
 **注：这里的λ需要我们手动去调整以取得最好的值**
 
 λ值越大代表考虑smooth的那个regularization那一项的影响力越大，我们找到的function就越平滑
@@ -343,8 +324,7 @@ $$
 
 注：这里的error指的是$\frac{1}{n}\sum\limits_{i=1}^n|\widehat{y}^i-y^i|$
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/regularization-performance.png?raw=true" alt="regularization-performance" style="width:60%;" /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/regularization-performance.png" alt="regularization-performance" style="width:60%;" /></center>
 #### conclusion总结
 
 ##### 关于pokemon的cp值预测的流程总结：
@@ -453,8 +433,7 @@ $$
 
 或者是说, 蓝色的线最开始时, 和红色线同样也有c、d两个参数, 可是最终学出来时, c 和 d 都学成了0, 虽然蓝色方程的误差要比红色大, 但是概括起数据来还是蓝色好
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/L1L2regularization.png?raw=true" alt="regularization"  /></center>
-
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/L1L2regularization.png" alt="regularization"  /></center>
 这也是我们通常采用的方法，我们不可能一开始就否定高次项而直接只采用低次线性表达式的model，因为有时候真实数据的确是符合高次项非线性曲线的分布的；而如果一开始直接采用高次非线性表达式的model，就很有可能造成overfitting，在曲线偏折的地方与真实数据的误差非常大。我们的目标应该是这样的：
 
 **==在无法确定真实数据分布的情况下，我们尽可能去改变loss function的评价标准==**
@@ -474,4 +453,4 @@ $$
 
 相对来说，L2要更稳定一些，L1的结果则不那么稳定，如果用p表示正规化程度，上面两式可总结如下：$L=\sum\limits_{i=1}^n(\widehat{y}^i-y^i)^2+\lambda\sum\limits_{j}(w_j)^p$
 
-<center><img src="https://github.com/Sakura-gh/ML-notes/blob/master/img/L1-L2.png?raw=true" alt="L1-L2"  /></center>
+<center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/L1-L2.png" alt="L1-L2"  /></center>
