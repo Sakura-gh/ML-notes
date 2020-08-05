@@ -10,8 +10,6 @@ ps：如果我的笔记对你有帮助，给个star叭！查看机器学习笔�
 
 <center><img src="https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/wx.jpg" /></center>
 
-<center><img src="https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/ml-book.png" width="60%" /></center>
-
 ##### ML-Assignments
 
 ML配套Assignments (ppt+code)：https://github.com/Sakura-gh/ML-assignments
@@ -144,7 +142,7 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [PyTorch简易入门](https://github.com/Sakura-gh/ML-notes/blob/master/code/pytorch)
 
-##### LICENSE:
+##### LICENSE：
 
 GPL-2.0
 
@@ -152,12 +150,18 @@ GPL-2.0
 
 图片加载可能会有些许缓慢，请耐心等待\\(\^o\^)/
 
-##### 赞赏作者
+##### 赞赏作者：
 
 如果读后有收获，请作者喝杯咖啡吧，您的支持就是我最大的更新动力~  
 
 <center><img src="https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/zs.png" width="60%"/></center>
 
-##### ML GPU
+##### PDF订阅版：
+
+关注公众号“Sakura的知识库”可订阅：
+
+<center><img src="https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/ml-book.png" width="80%" /></center>
+
+##### ML GPU：
 
 <center><a href="https://tracking.gitads.io/?repo=ML-notes"><img src="https://images.gitads.io/ML-notes" width="60%" alt="GitAds"/></a></center>
