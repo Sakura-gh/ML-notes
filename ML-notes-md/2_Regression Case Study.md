@@ -195,7 +195,7 @@ $$
 
 横坐标是b，纵坐标是w，颜色代表loss的值，越偏蓝色表示loss越小，越偏红色表示loss越大
 
-**每次计算得到的梯度gradient，即由$\frac{\partial L}{\partial b}和\frac{\partial L}{\partial w}$组成的vector向量，就是该等高线的法线方向(对应图中红色箭头的方向)；而$(-η\frac{\partial L}{\partial b},-η\frac{\partial L}{\partial w})$的作用就是让原先的$(w^i,b^i)$朝着gradient的方向即等高线法线方向前进，其中η(learning rate)的作用是每次更新的跨度(对应图中红色箭头的长度)；经过多次迭代，最终gradient达到极小值点**
+**每次计算得到的梯度gradient，即由$\frac{\partial L}{\partial b}和\frac{\partial L}{\partial w}$组成的vector向量，就是该等高线的法线方向(对应图中红色箭头的反方向)；而$(-η\frac{\partial L}{\partial b},-η\frac{\partial L}{\partial w})$的作用就是让原先的$(w^i,b^i)$朝着gradient的反方向即等高线法线方向前进，其中η(learning rate)的作用是每次更新的跨度(对应图中红色箭头的长度)；经过多次迭代，最终gradient达到极小值点**
 
 注：这里两个方向的η(learning rate)必须保持一致，这样每次更新坐标的step size是等比例缩放的，保证坐标前进的方向始终和梯度下降的方向一致；否则坐标前进的方向将会发生偏移
 

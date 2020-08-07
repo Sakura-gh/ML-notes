@@ -93,7 +93,7 @@ $w^{t+1}=w^t-\frac{\eta}{\sum\limits_{i=0}^t(g^i)^2}\cdot g^t$
 
 Adagrad的表达式$w^{t+1}=w^t-\frac{\eta}{\sum\limits_{i=0}^t(g^i)^2}\cdot g^t$里面有一件很矛盾的事情：
 
-我们在做gradient descent的时候，希望的是当梯度值即微分值$g^t$越大的时候(此时斜率越大，还没有接近最低点)更新的步伐要更大一些，但是Adagrad的表达式中，分母表示梯度越大步伐越大，分子却表示梯度越大步伐越小，两者似乎相互矛盾
+我们在做gradient descent的时候，希望的是当梯度值即微分值$g^t$越大的时候(此时斜率越大，还没有接近最低点)更新的步伐要更大一些，但是Adagrad的表达式中，分母表示梯度越大步伐越小，分子却表示梯度越大步伐越大，两者似乎相互矛盾
 
 <center><img src="https://gitee.com/Sakura-gh/ML-notes/raw/master/img/adagrad-contradiction.png" width="60%;"></center>
 
