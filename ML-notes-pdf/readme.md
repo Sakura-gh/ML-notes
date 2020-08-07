@@ -3,7 +3,7 @@
 机器学习笔记PDF订阅版封面概览如下：
 <center><img src="https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/ml-book.png" width="80%" /></center>
 
-扫描下方的微信或支付宝二维码，**打赏10元RMB并备注你的常用邮箱**，即可订阅**301页**的机器学习笔记PDF版本，订阅后24小时内会发送到邮箱\~订阅版本将长期进行修订和更新，并会在后续免费发送到你的邮箱中\~
+扫描下方的微信或支付宝二维码，**打赏19元RMB并备注你的常用邮箱**，即可订阅**301页**的机器学习笔记PDF版本，订阅后24小时内会发送到邮箱\~订阅版本将长期进行修订和更新，并会在后续免费发送到你的邮箱中\~
 
 <center><img src="https://cdn.jsdelivr.net/gh/Sakura-gh/ML-notes/img/ds.png" width="60%;"></center>
 
