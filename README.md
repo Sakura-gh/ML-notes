@@ -68,7 +68,7 @@ you can also visit gitee page for quicker Internet in China: https://Sakura-gh.g
 
 [22_Unsupervised Learning Deep Auto-encoder](https://sakura-gh.github.io/ML-notes/ML-notes-html/22_Unsupervised-Learning-Deep-Auto-encoder.html)
 
-[23_Unsupervised Learning Generation](https://sakura-gh.github.io/ML-notes/ML-notes-html/23_Unsupervised-Generation.html)
+[23_Unsupervised Learning Generation](https://sakura-gh.github.io/ML-notes/ML-notes-html/23_Unsupervised-Learning-Generation.html)
 
 [24_Transfer Learning](https://sakura-gh.github.io/ML-notes/ML-notes-html/24_Transfer-Learning.html)
 
